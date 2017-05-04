@@ -241,6 +241,16 @@ angular.module('your_app_name', [
     controller: 'ForgotPasswordCtrl'
   })
 
+  .state('app.exchangerate', {
+    url: "/exchangerate",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/exchangerate/exchangerate.html",
+        controller: "ExchangerateCtrl"
+      }
+    }
+  })
+
   // .state('facebook-sign-in', {
   //   url: "/facebook-sign-in",
   //   templateUrl: "views/auth/facebook-sign-in.html",

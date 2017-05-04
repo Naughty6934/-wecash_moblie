@@ -219,6 +219,9 @@ angular.module('your_app_name.app.controllers', [])
   //$scope.paymentDetails;
 })
 
+
+
+
 .controller('SettingsCtrl', function($scope, $ionicModal) {
 
   $ionicModal.fromTemplateUrl('views/app/legal/terms-of-service.html', {
@@ -242,6 +245,16 @@ angular.module('your_app_name.app.controllers', [])
   $scope.showPrivacyPolicy = function() {
     $scope.privacy_policy_modal.show();
   };
+
+})
+.controller('ExchangerateCtrl', function($scope,AuthService,ExchangeService) {
+  $scope.user = AuthService.getUser();
+  $scope.exchangerate = {};
+ExchangeService.getExchangerate($scope.user.base).then(function (success) {
+				$scope.exchangerate = success;
+			}, function (error) {
+				alert(JSON.stringify(error));
+			});
 
 })
 

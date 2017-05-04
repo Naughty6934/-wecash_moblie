@@ -79,6 +79,8 @@ angular.module('your_app_name.auth.controllers', [])
 			console.log("requesting new password");
 			$state.go('app.feed');
 		};
+
+		
 	})
 
 	;
